@@ -1,22 +1,20 @@
 import org.junit.Assert;
 import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
-import static com.google.common.primitives.Ints.asList;
 
+public class P03Test {
 
-
-//find second to last item in a list
-public class P02Test {
     @Test
-    public void shouldFindSecondLastElementFromAList() throws Exception {
+    public void shouldFindKthElementFromAList() throws Exception {
         //SETUP
-        List<Integer> numbers = asList(1, 2, 10, 3, 4, 5, 10, 1);
-        Integer expected = 10;
-        //EXECUTION
-        Integer actual = P02.secondLast(numbers);
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        Integer expected = 4;
+        //EXECUTE
+        Integer actual = P03.findKthElementList(numbers, 3);
         //ASSERT
         Assert.assertEquals(expected, actual);
         //TAKEDOWN
@@ -32,13 +30,12 @@ public class P02Test {
     }
 
     @Test(expected = NoSuchElementException.class)
-    public void shouldThrowExceptionWhenListHasSingleElement() throws Exception {
+    public void shouldThrowExceptionWhenNoKthElement() throws Exception {
         //SETUP
-        //EXECUTION
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        //EXECUTE
+        P03.findKthElementList(numbers, 5);
         //ASSERT
-        P02.secondLast(Arrays.asList(1));
         //TAKEDOWN
     }
-
-
 }
