@@ -29,7 +29,7 @@ public class P03Test {
         //TAKEDOWN
     }
 
-    @Test(expected = NoSuchElementException.class)
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void shouldThrowExceptionWhenNoKthElement() throws Exception {
         //SETUP
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
