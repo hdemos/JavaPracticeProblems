@@ -24,7 +24,19 @@ public class P04Test {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
         Integer expected = 5;
         //EXECUTE
-        Integer actual = findNumArrayElements(numbers);
+        Integer actual = P04.findNumArrayElements(numbers);
+        //ASSERT
+        Assert.assertEquals(expected, actual);
+        //TAKEDOWN
+    }
+
+    @Test
+    public void shouldFindListOfNonEmptyListStream() throws Exception {
+        //SETUP
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        Integer expected = 5;
+        //EXECUTE
+        Integer actual = P04.findNumArrayElementsStream(numbers);
         //ASSERT
         Assert.assertEquals(expected, actual);
         //TAKEDOWN
