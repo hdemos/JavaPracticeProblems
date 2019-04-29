@@ -19,4 +19,17 @@ public class P05Test {
         }
         //TAKEDOWN
     }
+
+    public void shouldReverseAListEasy() throws Exception {
+        //SETUP
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> expected = Arrays.asList(5, 4, 3, 2, 1);
+        //EXECUTE
+        List<Integer> actual = P05.reverseListEasy(numbers);
+        //ASSERT
+        for(int i=0; i<numbers.size(); i++){
+            Assert.assertEquals(expected, actual);
+        }
+        //TAKEDOWN
+    }
 }
